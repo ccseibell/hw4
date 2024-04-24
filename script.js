@@ -1,4 +1,4 @@
-// Assuming the CSV data is stored in 'data.csv' and d3.js library is included in your HTML file.
+
 
 // Load the CSV file
 async function loadData() {
