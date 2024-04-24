@@ -10,3 +10,7 @@ h1 {
 p {
     color: darkred;
 }
+#my_dataviz {
+    width: 100%;
+    height: 600px;
+}
