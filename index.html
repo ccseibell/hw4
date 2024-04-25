@@ -3,17 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Include D3.js from CDN -->
+    <title>Visualization with Filters</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        /* Custom CSS styles for legend */
+        .legend {
+            margin-top: 20px;
+        }
+        .legend-item {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .legend-color {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is a paragraph of text!</p>
-    <!-- Container for the D3 visualization -->
+    <h1>Bloody or Burnt?</h1>
+    <h2>How do Americans like their steak? </h2>
+    <br>
+    <p>For the lottery questions these are the hypothetical situations:</p>
+    
+    <p>In Lottery A, you have a 50% chance of success, with a payout of $100.</p>
+    <p>In Lottery B, you have a 90% chance of success, with a payout of $20.</p>
+    <p>Assuming you have $10 to bet, which lottery would you choose?</p>
+
+    <!-- Filter controls -->
+    <label for="lotFilter">Lot:</label>
+    <select id="lotFilter">
+        <option value="All">All</option>
+        <option value="Lottery A">Lottery A</option>
+        <option value="Lottery B">Lottery B</option>
+    </select>
+    
+    <label for="smokeFilter">Smoke:</label>
+    <select id="smokeFilter">
+        <option value="All">All</option>
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+    </select>
+    
+    <label for="drinkFilter">Drink:</label>
+    <select id="drinkFilter">
+        <option value="All">All</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    
+    <label for="gambleFilter">Gamble:</label>
+    <select id="gambleFilter">
+        <option value="All">All</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    
+    <label for="skydivingFilter">Skydiving:</label>
+    <select id="skydivingFilter">
+        <option value="All">All</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    
+    <label for="speedingFilter">Speeding:</label>
+    <select id="speedingFilter">
+        <option value="All">All</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    
+    <label for="cheatedFilter">Cheated:</label>
+    <select id="cheatedFilter">
+        <option value="All">All</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    <button id="updateButton">Update Visualization</button>
+
+    <!-- Container for the stacked bar chart -->
     <div id="my_dataviz"></div>
-    <!-- Your custom script for the visualization -->
+
+    <!-- Container for the legend -->
+    <div id="legend" class="legend">
+        <div class="legend-item">
+            <span class="legend-color" style="background-color: #ff9999;"></span>
+            Rare
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background-color: #ffcc99;"></span>
+            MediumRare
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background-color: #ffcc66;"></span>
+            Medium
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background-color: #ff9966;"></span>
+            MediumWell
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background-color: #cc6600;"></span>
+            Well
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
